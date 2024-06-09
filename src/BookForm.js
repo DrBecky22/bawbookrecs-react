@@ -1,15 +1,19 @@
-import { Formik } from "formik";
+import { Formik, Form,  } from "formik";
 import React from "react";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Button, Label, Input } from "reactstrap";
 
 const BookForm = () => {
     return (
-        <form>
-            <label>
-                Title:
-                <input type="text" name="title" />
-            </label>
-        </form>  
+        <Formik>
+            <Form>
+                <FormGroup>
+                    <Label for="title">Title</Label>
+                    <Input type="text" name="title" id="title" />
+                </FormGroup>
+                <Button type="submit">Submit</Button>
+            </Form>
+        </Formik>
+
     )
 }
 
