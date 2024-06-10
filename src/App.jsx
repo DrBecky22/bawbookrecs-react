@@ -1,8 +1,7 @@
-import React from "react";
+
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import BookDetail from "./BookDetail";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,7 +15,6 @@ function App() {
       </div>
       <h1>Recommended Book List</h1>
       <h2>From the Ladies of BAW</h2>
-      <BookDetail />
       <div className="card">
         <h3>Click to log your visit</h3>
         <button onClick={() => setCount((count) => count + 1)}>

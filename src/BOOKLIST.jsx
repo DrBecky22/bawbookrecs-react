@@ -31,7 +31,7 @@ const bookList = [
       awards: ['Goodreads Choice Award Nominee for Historical Fiction (2021)'],
       synopsis: '',
       rating: 4.5,
-      likes: 100,
+      likes: 50,
       comments: [
         {
           user: 'Amanda',
