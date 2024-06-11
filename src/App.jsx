@@ -1,7 +1,12 @@
-
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import { Card, Button } from "reactstrap";
+// import reactLogo from "./assets/react.svg";
 import "./App.css";
+import { BooksDB } from "./BooksDB";
+// import fantasy from "./assets/fantasy.jpg";
+import pirin from "./assets/Pirin Tablets.jpg";
+
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,11 +15,11 @@ function App() {
     <>
       <div>
         <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+          <img src={pirin} className="logo" alt="Pirin Tablet" />
         </a>
       </div>
-      <h1>Recommended Book List</h1>
-      <h2>From the Ladies of BAW</h2>
+      <h1>The BAW Book List</h1>
+      <h2>Books Are Medicine</h2>
       <div className="card">
         <h3>Click to log your visit</h3>
         <button onClick={() => setCount((count) => count + 1)}>
@@ -22,11 +27,24 @@ function App() {
         </button>
       </div>
       <div>
-        <button>Search by Author</button>
-        <button>Search by Likes</button>
-        <button>Search by Awards</button>
-        <button>See Whole List</button>
-        <button>Recommend</button>
+        <Button>Recommend A Book</Button>
+        <h2>Search Books By:</h2>
+        <Button className="btn btn-primary me-2" onClick="">Author</Button>
+        <Button>Likes</Button>
+        <Button>Awards</Button>
+        <Button>See All</Button>
+        
+      </div>
+      <div className="flex">
+        {BooksDB.map((book) => 
+          <Card key={book.id} >
+            <h3>{book.title}</h3>
+            <p>by {book.author}</p>
+            <p>Genre: {book.genre}</p>
+            <p>Likes: {book.likes}</p>
+            <Button>Details</Button>
+          </Card>
+        )}
       </div>
     </>
   );
