@@ -1,25 +1,31 @@
+// import fantasy from "./assets/fantasy.jpg";
+import pirin from "./assets/Pirin Tablets.jpg";
 import { useState } from "react";
 import { Card, Button } from "reactstrap";
 // import reactLogo from "./assets/react.svg";
 import "./App.css";
+import BookForm from "./BookForm";
+
+
 import { BooksDB } from "./BooksDB";
-// import fantasy from "./assets/fantasy.jpg";
-import pirin from "./assets/Pirin Tablets.jpg";
+
 
 
 
 function App() {
   const [count, setCount] = useState(0);
+  
 
   return (
     <>
+
+      <h1>The BAW Book List</h1>
       <div>
         <a href="https://react.dev" target="_blank">
           <img src={pirin} className="logo" alt="Pirin Tablet" />
         </a>
       </div>
-      <h1>The BAW Book List</h1>
-      <h2>Books Are Medicine</h2>
+      <h2>Great Stories are Medicine</h2>
       <div className="card">
         <h3>Click to log your visit</h3>
         <button onClick={() => setCount((count) => count + 1)}>
@@ -27,20 +33,39 @@ function App() {
         </button>
       </div>
       <div>
-        <Button>Recommend A Book</Button>
+        <Button color="success">
+            Recommend A Book    
+        </Button>
+
         <h2>Search Books By:</h2>
-        <Button className="btn btn-primary me-2" onClick="">Author</Button>
+        <Button color="success">Author</Button>
         <Button>Likes</Button>
         <Button>Awards</Button>
         <Button>See All</Button>
-        
       </div>
-      <div className="flex">
+      <div style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "space-around",
+        border: "1px solid red",
+        backgroundColor: "darkgray",
+        padding: "20px", 
+        margin: "20px"
+      }} className="cardDeck"
+      >
+
         {BooksDB.map((book) => 
-          <Card key={book.id} >
+          <Card key={book.id} 
+            style={{
+              border: "1px solid black",
+              backgroundColor: "lightgray", 
+              borderRadius: "10px",
+              margin: "10px",
+            }}
+              >
             <h3>{book.title}</h3>
             <p>by {book.author}</p>
-            <p>Genre: {book.genre}</p>
+            <p>Genres: {book.genres}</p>
             <p>Likes: {book.likes}</p>
             <Button>Details</Button>
           </Card>

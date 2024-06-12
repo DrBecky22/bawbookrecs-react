@@ -3,7 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: azure;
+  background-color: rgb(152, 186, 192);
+  background-image: "./assets/fantasy.jpg";
 }
 
 .logo {
