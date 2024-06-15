@@ -1,5 +1,5 @@
 // import fantasy from "./assets/fantasy.jpg";
-import pirin from "./assets/Pirin Tablets.jpg";
+import pirin from "./assets/Pirin.jpg";
 import { useState } from "react";
 import { Card, Button } from "reactstrap";
 // import reactLogo from "./assets/react.svg";
@@ -14,7 +14,7 @@ import { BooksDB } from "./BooksDB";
 
 function App() {
   const [count, setCount] = useState(0);
-  
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <>
@@ -33,7 +33,7 @@ function App() {
         </button>
       </div>
       <div>
-        <Button color="success">
+        <Button color="success" onClick={()=> setOpenModal(true) }>
             Recommend A Book    
         </Button>
 

@@ -1,17 +1,48 @@
-import { Formik, Form, FormGroup, useField } from "formik";
-import { Button, Label, Input } from "reactstrap";
+// import React from "react";
+import { Formik, Form, Input } from "formik";
+import { Button } from "reactstrap";
+
+const Modal = () => {
+    return (
+        <div>
+        <h1>Recommend a Book</h1>
+        <BookForm />
+        </div>
+    );
+    
+}
+
+
+
 
 const BookForm = () => {
+    const [formDisplay, setFormDisplay] = useState(false);
+
+
     return (
         <Formik>
             <Form>
-                <MyTextInput
+                <Input
                     label="Title"
                     name="title"
                     type="text"
                     placeholder="Title"
                 >
-                </MyTextInput>
+                </Input>
+                <Input
+                    label="Author"
+                    name="author"
+                    type="text"
+                    placeholder="Author"
+                >
+                </Input>
+                <Input
+                    label="Genres"
+                    name="title"
+                    type="text"
+                    placeholder="Select Genres"
+                >
+                </Input>
                 <Button type="submit">Submit</Button>
             </Form>
         </Formik>
