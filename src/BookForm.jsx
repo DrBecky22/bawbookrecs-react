@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Formik, Form, Input } from "formik";
-import { Button, Modal, ModalBody, ModalHeader } from "reactstrap";
+import { Button, Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 
 
 const BookForm = () => {
@@ -9,7 +9,7 @@ const BookForm = () => {
 
     return (
         <div>
-        <Button color="success" onClick={()=> setFormDisplay(toggle) }>
+        <Button color="success" onClick={toggle}>
             Recommend A Book    
         </Button>
 
@@ -45,6 +45,9 @@ const BookForm = () => {
                         </Form>
                     </Formik>
             </ModalBody>
+            <ModalFooter>
+                <Button onClick={toggle}>Close</Button>
+            </ModalFooter>
         </Modal>
         </div>
     )
