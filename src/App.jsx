@@ -5,8 +5,6 @@ import { Card, Button } from "reactstrap";
 // import reactLogo from "./assets/react.svg";
 import "./App.css";
 import BookForm from "./BookForm";
-
-
 import { BooksDB } from "./BooksDB";
 
 
@@ -14,7 +12,7 @@ import { BooksDB } from "./BooksDB";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [openModal, setOpenModal] = useState(false);
+
 
   return (
     <>
@@ -33,9 +31,7 @@ function App() {
         </button>
       </div>
       <div>
-        <Button color="success" onClick={()=> setOpenModal(true) }>
-            Recommend A Book    
-        </Button>
+        <BookForm />
 
         <h2>Search Books By:</h2>
         <Button color="success">Author</Button>

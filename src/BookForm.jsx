@@ -1,52 +1,52 @@
-// import React from "react";
+import { useState } from "react";
 import { Formik, Form, Input } from "formik";
-import { Button } from "reactstrap";
-
-const Modal = () => {
-    return (
-        <div>
-        <h1>Recommend a Book</h1>
-        <BookForm />
-        </div>
-    );
-    
-}
-
-
+import { Button, Modal, ModalBody, ModalHeader } from "reactstrap";
 
 
 const BookForm = () => {
     const [formDisplay, setFormDisplay] = useState(false);
-
+    const toggle = () => setFormDisplay(!formDisplay);
 
     return (
-        <Formik>
-            <Form>
-                <Input
-                    label="Title"
-                    name="title"
-                    type="text"
-                    placeholder="Title"
-                >
-                </Input>
-                <Input
-                    label="Author"
-                    name="author"
-                    type="text"
-                    placeholder="Author"
-                >
-                </Input>
-                <Input
-                    label="Genres"
-                    name="title"
-                    type="text"
-                    placeholder="Select Genres"
-                >
-                </Input>
-                <Button type="submit">Submit</Button>
-            </Form>
-        </Formik>
+        <div>
+        <Button color="success" onClick={()=> setFormDisplay(toggle) }>
+            Recommend A Book    
+        </Button>
 
+        <Modal>
+            <ModalHeader>            
+                <h2>Recommend A Book</h2>
+            </ModalHeader>
+            <ModalBody>
+                <Formik>
+                        <Form>
+                            <Input
+                                label="Title"
+                                name="title"
+                                type="text"
+                                placeholder="Title"
+                            >
+                            </Input>
+                            <Input
+                                label="Author"
+                                name="author"
+                                type="text"
+                                placeholder="Author"
+                            >
+                            </Input>
+                            <Input
+                                label="Genres"
+                                name="title"
+                                type="text"
+                                placeholder="Select Genres"
+                            >
+                            </Input>
+                            <Button type="submit">Submit</Button>
+                        </Form>
+                    </Formik>
+            </ModalBody>
+        </Modal>
+        </div>
     )
 }
 
