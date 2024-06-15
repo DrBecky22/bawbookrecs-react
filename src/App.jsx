@@ -8,15 +8,12 @@ import BookForm from "./BookForm";
 import { BooksDB } from "./BooksDB";
 
 
-
-
 function App() {
   const [count, setCount] = useState(0);
 
 
   return (
     <>
-
       <h1>The BAW Book List</h1>
       <div>
         <a href="https://react.dev" target="_blank">
@@ -30,6 +27,7 @@ function App() {
           visit # {count}
         </button>
       </div>
+      
       <div>
         <BookForm />
 

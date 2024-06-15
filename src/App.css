@@ -3,8 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  /* background-color: rgb(152, 186, 192); */
-  background-image: "./assets/fantasy.jpg";
+  background-color: rgb(75, 72, 65, 0.5), ;
+  background-image: url("./assets/fantasy.jpg");
 }
 
 .logo {
