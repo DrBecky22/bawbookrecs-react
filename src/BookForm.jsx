@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 
-
 const BookForm = () => {
     const [formDisplay, setFormDisplay] = useState(false);
     const toggle = () => setFormDisplay(!formDisplay);
@@ -13,7 +12,7 @@ const BookForm = () => {
             Recommend A Book    
         </Button>
 
-        <Modal>
+        <Modal isOpen={formDisplay}>
             <ModalHeader>            
                 <h2>Recommend A Book</h2>
             </ModalHeader>
@@ -21,7 +20,6 @@ const BookForm = () => {
                 <Formik>
                         <Form>
                             <Field
-                                
                                 name="title"
                                 type="text"
                                 placeholder="Title"
@@ -40,11 +38,12 @@ const BookForm = () => {
                                 placeholder="Select Genres"
                             >
                             </Field>
-                            <Button type="submit">Submit</Button>
+
                         </Form>
                     </Formik>
             </ModalBody>
             <ModalFooter>
+                <Button type="submit">Submit</Button>
                 <Button onClick={toggle}>Close</Button>
             </ModalFooter>
         </Modal>
