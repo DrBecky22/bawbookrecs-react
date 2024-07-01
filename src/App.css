@@ -36,7 +36,9 @@
 }
 
 .modalContainer {
-  background-color: rgb(104, 153, 142);
+  height: 60%;
+  width: 60%;
+  background-color: rgb(104, 153, 142, 0.5);
   border: 2px solid #07381c;
   border-radius: 10px;
   padding: 2em;

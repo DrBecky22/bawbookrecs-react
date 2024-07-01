@@ -7,14 +7,16 @@ const BookForm = () => {
     const toggle = () => setFormDisplay(!formDisplay);
 
     return (
-    <div className="overlay">
-        <div className="modalContainer">
+        <div className="">
             <Button color="danger" onClick={toggle}>
                 Recommend A Book    
             </Button>
 
             <Modal isOpen={formDisplay}>
-                <ModalHeader>            
+            <div className="overlay">
+            <div className="modalContainer">
+                <ModalHeader> 
+                    <buttonc className="close-btn"><p>X</p></buttonc>           
                     <h2>Recommend A Book</h2>
                 </ModalHeader>
                 <ModalBody>
@@ -56,8 +58,9 @@ const BookForm = () => {
                     <Button onClick={toggle}>Close</Button>
                     </div>
                 </ModalFooter>
-            </Modal>
+            </div>
         </div>
+        </Modal>
     </div>
     )
 }
