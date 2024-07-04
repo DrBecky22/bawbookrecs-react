@@ -1,15 +1,11 @@
-import { useState } from 'react';
 import { Card } from 'reactstrap';
+import BookDetail from './BookDetail';
 
 const SearchResults = () => {
-    const [count, setCount] = useState(0);
-
+    
     return (
         <Card>
-            <h3>Click to log your visit</h3>
-            <button onClick={() => setCount((count) => count + 1)}>
-                visit # {count}
-            </button>
+            <BookDetail match={} />
         </Card>
     )
 }

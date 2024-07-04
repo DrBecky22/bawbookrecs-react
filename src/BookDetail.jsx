@@ -6,6 +6,12 @@ const BookDetail = ({match}) => {
         <div>
         <h1>{book.name}</h1>
         <p>{book.author}</p>
+        <p>{book.genres}</p>
+        <p>{book.likes}</p>
+        <p>overall rating</p>
+        <p>smut meter</p>
+        <p>doom meter</p>
+        <p>comments</p>
         </div>
     );
     };
